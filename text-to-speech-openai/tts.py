@@ -6,6 +6,9 @@ from openai import OpenAI
 
 def text_to_speech(text):
 
+    if text.strip() == '':
+        text = "Hey! You didn't enter any text!"
+
     speech_file_path = Path(__file__).parent / "speech.mp3"
     response = client.audio.speech.create(
     model="tts-1",
