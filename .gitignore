@@ -1,3 +1,6 @@
+# Ignore temporary directories created by some gradio apps
+*flagged*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -19,7 +22,7 @@ lib64/
 parts/
 sdist/
 var/
-wheels/
+wheels/ co
 share/python-wheels/
 *.egg-info/
 .installed.cfg
