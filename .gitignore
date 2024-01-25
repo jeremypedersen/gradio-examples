@@ -1,6 +1,9 @@
 # Ignore temporary directories created by some gradio apps
 *flagged*
 
+# Ignore outputs from audio examples (text-to-speech, music, etc...)
+*.mp3
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
