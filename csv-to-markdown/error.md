@@ -1,0 +1,4 @@
+| Column 1   | Column 2          |
+|:-----------|:------------------|
+| Your Table | Was Empty         |
+| Or Had     | Formatting Issues |
