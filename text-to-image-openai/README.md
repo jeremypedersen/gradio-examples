@@ -1,4 +1,4 @@
-# Text-to-Text with OpenAI's API
+# Text-to-Image with OpenAI's API
 
 ## Prerequisites
 
@@ -19,11 +19,11 @@ It's easy! Just invoke `run.sh` with:
 Or run manually with Python, with:
 
 ```
-python3 ttt.py --share
+python3 tti.py --share
 ```
 
 Simply remove the `--share` flag to run without creating a shareable Gradio proxy URL.
 
 ## Notes
 
-For now, the script always calls GPT-4. Ability to choose specific models may be added in the future. 
+Script currently calls DALL-E 3, but I may add other models in the future. 

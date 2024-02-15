@@ -4,7 +4,7 @@ import gradio as gr
 from pathlib import Path
 from openai import OpenAI
 
-def text_to_speech(text):
+def text_to_speech(text, voice):
 
     if text.strip() == '':
         text = "Hey! You didn't enter any text!"
@@ -12,7 +12,7 @@ def text_to_speech(text):
     speech_file_path = Path(__file__).parent / "speech.mp3"
     response = client.audio.speech.create(
     model="tts-1",
-    voice="alloy",
+    voice=voice.lower(),
     input=text
     )
 
@@ -29,9 +29,13 @@ args = parser.parse_args()
 client = OpenAI()
 
 # Create the Gradio interface
+
+# Create dropdown menu options (allow voice selection)
+dropdown = gr.Dropdown(choices=['Alloy', 'Echo'], label="Select a voice")
+
 iface = gr.Interface(
     fn=text_to_speech,
-    inputs="text",
+    inputs=["text", dropdown],
     outputs="audio",
     title="Text to Speech Converter",
     description="Enter text and convert it to speech using OpenAI's text-to-speech API."
